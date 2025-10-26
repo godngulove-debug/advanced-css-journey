@@ -1,0 +1,27 @@
+@use '../abstracts/variables';
+
+.row {
+  max-width: variables.$grid-width;
+  background-color: #eeeeee;
+  margin: 0 auto;
+
+  &:not(:last-child) {
+    margin-bottom: variables.$gutter-vertical;
+  }
+
+  .col-1-of-2 {
+    width: calc((100% - #{variables.$gutter-horizental}) / 2);
+    background-color: orangered;
+    float: left;
+
+    &:not(:last-child) {
+      margin-right: variables.$gutter-horizental;
+    }
+  }
+
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
