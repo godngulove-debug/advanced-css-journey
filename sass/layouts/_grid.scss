@@ -3,7 +3,7 @@
 
 .row {
   max-width: variables.$grid-width;
-  background-color: #eeeeee;
+  // background-color: #eeeeee;
   margin: 0 auto;
 
   &:not(:last-child) {
@@ -12,9 +12,13 @@
 
   @include mixins.clearfix;
 
-  .col-1-of-2 {
-    width: calc((100% - #{variables.$gutter-horizental}) / 2);
-    background-color: orangered;
+  // [class^='col-'] {
+  //   background-color: orangered;
+  //   float: left;
+  // }
+
+  %cols {
+    // background-color: orangered;
     float: left;
 
     &:not(:last-child) {
@@ -22,7 +26,13 @@
     }
   }
 
+  .col-1-of-2 {
+    @extend %cols;
+    width: calc((100% - #{variables.$gutter-horizental}) / 2);
+  }
+
   .col-1-of-3 {
-    width: calc(100% - $gutter-horizental);
+    @extend %cols;
+    width: calc((100% - 2 * #{variables.$gutter-horizental}) / 3);
   }
 }
