@@ -35,4 +35,9 @@
     @extend %cols;
     width: calc((100% - 2 * #{variables.$gutter-horizental}) / 3);
   }
+
+  .col-1-of-4 {
+    @extend %cols;
+    width: calc((100% - 3 * #{variables.$gutter-horizental}) / 4);
+  }
 }

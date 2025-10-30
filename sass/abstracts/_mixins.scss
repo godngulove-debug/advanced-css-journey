@@ -1,7 +1,29 @@
+@use './variables';
+
 @mixin clearfix {
   &::after {
     content: '';
     display: table;
     clear: both;
   }
+}
+
+@mixin linearGradient-background($img) {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(variables.$color-primary-light, 0.803),
+      rgba(variables.$color-primary-dark, 0.802)
+    ),
+    url(../img/#{$img}.jpg);
+}
+
+@mixin linearGradient-text {
+  display: inline-block;
+  background-image: linear-gradient(
+    to right,
+    variables.$color-primary-light,
+    variables.$color-primary-dark
+  );
+  background-clip: text;
+  color: transparent;
 }
