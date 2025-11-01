@@ -248,17 +248,20 @@ body {
   backface-visibility: hidden;
   transition: all 0.8s ease;
 }
+.card__side--front {
+  z-index: 22;
+}
 .card__side--back {
   transform: rotateY(180deg);
 }
 .card__side--back-1 {
   background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
 }
-.card:hover .card__side--back {
-  transform: rotateY(0);
-}
 .card:hover .card__side--front {
   transform: rotateY(-180deg);
+}
+.card:hover .card__side--back {
+  transform: rotateY(0);
 }
 .card__picture {
   background-size: cover;
@@ -309,7 +312,14 @@ body {
 .card__details ul li:not(:last-child) {
   border-bottom: 1px solid #eee;
 }
-
+.card__cta {
+  background-color: #37bddf;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
 .feature-box {
   background-color: rgba(255, 255, 255, 0.8);
   font-size: 1.5rem;
