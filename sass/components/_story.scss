@@ -1,4 +1,5 @@
 @use '../abstracts/variables';
+@use '../abstracts/mixins';
 
 .story {
   width: 75%;
@@ -7,4 +8,35 @@
   background-color: variables.$color-white;
   border-radius: 3px;
   padding: 6rem;
+  padding-left: 9rem;
+  font-size: variables.$default-font-size;
+  transform: skewX(-12deg);
+
+  &__shape {
+    position: relative;
+    width: 15rem;
+    height: 15rem;
+    // background-color: orangered;
+    float: left;
+    shape-outside: circle(50% at 50% 50%);
+
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg);
+  }
+
+  &__img {
+    height: 100%;
+  }
+
+  &__caption {
+    @include mixins.centering;
+    color: variables.$color-white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    // text-align: center;
+  }
+
+  &_text {
+    transform: skewX(12deg);
+  }
 }
