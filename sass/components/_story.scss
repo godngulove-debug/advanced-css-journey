@@ -5,12 +5,13 @@
   width: 75%;
   margin: 0 auto;
   box-shadow: 0 3rem 6rem rgba($color: variables.$color-black, $alpha: 0.1);
-  background-color: variables.$color-white;
+  background-color: rgba($color: variables.$color-white, $alpha: 0.5);
   border-radius: 3px;
   padding: 6rem;
   padding-left: 9rem;
   font-size: variables.$default-font-size;
   transform: skewX(-12deg);
+  user-select: none;
 
   &__shape {
     position: relative;
@@ -26,14 +27,31 @@
 
   &__img {
     height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    transition: transform 0.5s;
+  }
+
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness();
   }
 
   &__caption {
-    @include mixins.centering;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
     color: variables.$color-white;
     text-transform: uppercase;
     font-size: 1.7rem;
-    // text-align: center;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.3s;
+  }
+
+  &:hover &__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
   }
 
   &_text {
