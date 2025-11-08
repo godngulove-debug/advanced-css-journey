@@ -17,6 +17,7 @@
 
 @use './pages/home';
 
-@use './layouts/header';
-@use './layouts/grid';
 @use './layouts/footer';
+@use './layouts/grid';
+@use './layouts/header';
+@use './layouts/navigation';
