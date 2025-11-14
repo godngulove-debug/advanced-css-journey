@@ -1,3 +1,19 @@
+/*  
+DESKTIO FIRST OPPROACH
+0-600px: phone
+600 - 900px: Tablet/Ipad portrait
+900 - 1200px: Tablet/Ipad landscape
+1200 - 1800px: Our NORMAL STYLES for REGULAR PCs
+1800px ~: BIG DESKTOP
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+*/
 *,
 *::after,
 *::before {
@@ -8,6 +24,21 @@
 
 html {
   font-size: 62.5%;
+}
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
 }
 
 /* Project-wide font definition */
@@ -505,7 +536,7 @@ body {
   border-radius: 3px;
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.25);
-  transition: all 0.5s 0.3s;
+  transition: all 0.5s 0.2s;
 }
 .popup__left, .popup__right {
   display: table-cell;
