@@ -69,6 +69,11 @@
     width: 49%;
     // background-color: #adaaaa;
     display: inline-block;
+
+    @include mixins.respond(tab-port) {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
   }
 
   &__radio-input {
