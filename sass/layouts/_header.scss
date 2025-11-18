@@ -9,12 +9,20 @@
   //     rgba(variables.$color-primary-dark, 0.802)
   //   ),
   //   url(../img/hero.jpg);
-  @include mixins.linearGradient-background('hero');
+  @include mixins.linearGradient-background('hero-small');
   background-size: cover;
   background-position: top;
   clip-path: unset;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative;
+
+  @media (min-resolution: 192dpi) and (min-width: 37.5em) {
+    @include mixins.linearGradient-background('hero');
+  }
+
+  @include mixins.respond(big-desktop) {
+    @include mixins.linearGradient-background('hero');
+  }
 
   @include mixins.respond(tab-port) {
     clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
