@@ -177,7 +177,7 @@
     font-weight: 100;
   }
 
-  @include mixins.respond(tab-port) {
+  @media (max-width: 56.25em), (hover: none) {
     height: auto;
     border-radius: 2px;
     background-color: variables.$color-white;

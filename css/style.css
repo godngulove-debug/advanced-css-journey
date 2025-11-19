@@ -53,6 +53,10 @@ body {
     padding: 0;
   }
 }
+body ::selection {
+  background-color: #55c57a;
+  color: #fff;
+}
 
 @keyframes moveInLeft {
   0% {
@@ -452,7 +456,7 @@ body {
   font-size: 6rem;
   font-weight: 100;
 }
-@media (max-width: 56.25em) {
+@media (max-width: 56.25em), (hover: none) {
   .card {
     height: auto;
     border-radius: 2px;

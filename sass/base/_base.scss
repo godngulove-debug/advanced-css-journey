@@ -37,4 +37,9 @@ body {
   @include mixins.respond(tab-port) {
     padding: 0;
   }
+
+  ::selection {
+    background-color: variables.$color-primary;
+    color: variables.$color-white;
+  }
 }

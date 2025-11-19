@@ -53,6 +53,9 @@ body {
     padding: 0;
   }
 }
+body ::selection {
+  background-color: #55c57a;
+}
 
 @keyframes moveInLeft {
   0% {
