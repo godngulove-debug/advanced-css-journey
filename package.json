@@ -4,7 +4,10 @@
   "description": "Landing page for natours",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "sass sass/main.scss css/style.css -w"
+    "watch:sass": "sass sass/main.scss css/style.css -w",
+    "compile:sass": "sass sass/main.scss css/style.comp.css",
+    "concat:css": "concat -o css/style.concat.css css/icon-fonts.css css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b `last 10 versions` css/syle.concact.css -o css/style.prefix.css"
   },
   "repository": {
     "type": "git",
@@ -17,6 +20,9 @@
   },
   "homepage": "https://github.com/godngulove-debug/advanced-css-journey#readme",
   "devDependencies": {
+    "autoprefixer": "^10.4.22",
+    "concat": "^1.0.3",
+    "postcss-cli": "^11.0.1",
     "sass": "^1.93.2"
   }
 }
