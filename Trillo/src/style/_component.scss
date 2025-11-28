@@ -94,13 +94,10 @@
     fill: var(--color-grey-dark-2);
   }
 
-  &__user {
-  }
-
-  &__user-name {
-    font-size: 1.4rem;
-    font-weight: 500;
-  }
+  //   &__user-name {
+  //     font-size: 1.4rem;
+  //     font-weight: 500;
+  //   }
 
   &__user-photo {
     height: 3.75rem;
@@ -122,4 +119,45 @@
     justify-content: center;
     align-items: center;
   }
+}
+
+//////////////////////////////////////////////
+// SIDE NAVIGATION
+.side-nav {
+  background-color: #2ea937;
+  font-size: 1.4rem;
+  list-style: none;
+
+  margin-top: 3.5rem;
+
+  &__item {
+  }
+
+  &__link:link,
+  &__link:visited {
+    background-color: orange;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    color: var(--color-grey-light-1);
+  }
+
+  &__icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-right: 2rem;
+    // fill: ;
+  }
+}
+
+//////////////////////////////////////////////
+// LEGAL TEXT
+
+.legal {
+  background-color: #b9583a;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 2.5rem;
+  color: var(--color-grey-light-4);
 }
