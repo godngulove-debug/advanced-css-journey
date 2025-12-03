@@ -1,9 +1,15 @@
+@use './base';
+
 .container {
   max-width: 120rem;
   margin: 8rem auto;
   background-color: var(--color-grey-light-1);
   box-shadow: var(--shadow-dark);
   min-height: 50rem;
+
+  @media (max-width: base.$bp-largest) {
+    margin: 0;
+  }
 }
 
 .header {
