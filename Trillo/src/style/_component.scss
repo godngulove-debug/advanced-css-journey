@@ -1,3 +1,5 @@
+@use './base';
+
 //////////////////////////////////////////////
 // logo
 .logo {
@@ -14,6 +16,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: base.$bp-smallest) {
+    order: 1;
+    flex: 0 0 100%;
+  }
 
   &__input {
     font-family: inherit;
@@ -129,11 +136,24 @@
 
   margin-top: 3.5rem;
 
+  @media (max-width: base.$bp-medium) {
+    display: flex;
+    margin: 0;
+  }
+
   &__item {
     position: relative;
 
     &:not(:last-child) {
       margin-bottom: 0.5rem;
+
+      @media (max-width: base.$bp-medium) {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (max-width: base.$bp-medium) {
+      flex: 1;
     }
   }
 
@@ -148,7 +168,8 @@
     background-color: var(--color-primary);
     opacity: 0;
     transform: scaleY(0);
-    // transform-origin: bottom;
+
+    // transform-origin: top;
     transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s, background-color 0.2s;
   }
 
@@ -174,6 +195,18 @@
     text-transform: uppercase;
     padding: 1.5rem 3rem;
     color: var(--color-grey-light-1);
+
+    @media (max-width: base.$bp-medium) {
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    @media (max-width: base.$bp-small) {
+      flex-direction: column;
+      // align-items: center;
+      // justify-content: center;
+      padding: 1.5rem 0.5rem;
+    }
   }
 
   &__icon {
@@ -181,6 +214,13 @@
     height: 1.75rem;
     margin-right: 2rem;
     fill: currentColor;
+
+    @media (max-width: base.$bp-small) {
+      margin-right: 0;
+      margin-bottom: 0.7rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 }
 
@@ -192,6 +232,10 @@
   text-align: center;
   padding: 2.5rem;
   color: var(--color-grey-light-4);
+
+  @media (max-width: base.$bp-medium) {
+    display: none;
+  }
 }
 
 //////////////////////////////////////////////
@@ -221,6 +265,11 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem 3rem;
+
+    @media (max-width: base.$bp-small) {
+      font-size: 1.8rem;
+      padding: 1.25rem 2rem;
+    }
   }
 
   &__stars {
@@ -259,14 +308,26 @@
     justify-content: center;
     align-items: center;
 
+    @media (max-width: base.$bp-small) {
+      padding: 0 1.5rem;
+    }
+
     &-average {
       font-size: 2.25rem;
       font-weight: 300;
+
+      @media (max-width: base.$bp-small) {
+        font-size: 1.8rem;
+      }
     }
 
     &-count {
       font-size: 0.8rem;
       text-transform: uppercase;
+
+      @media (max-width: base.$bp-small) {
+        font-size: 0.9rem;
+      }
     }
   }
 }
@@ -349,11 +410,16 @@
     width: 1rem;
     height: 1rem;
     margin-right: 0.7rem;
-    // background-image: url('./img/chevron-thin-right.svg');
-
-    background-color: var(--color-primary);
-    mask-image: url('./img/chevron-thin-right.svg');
-    mask-size: cover;
+    // OLDER BROWSERS
+    background-image: url('./img/chevron-thin-right.svg');
+    background-size: cover;
+    // NEWER BROWSERS
+    @supports (-webkit-maks-image: url()) or (maks-image: url()) {
+      background-color: var(--color-primary);
+      background-image: none;
+      mask-image: url('./img/chevron-thin-right.svg');
+      mask-size: cover;
+    }
   }
 }
 
@@ -373,7 +439,7 @@
     border-radius: 50%;
     border: 3px solid #fff;
     &:not(:last-child) {
-      margin-right: -1.5rem;
+      margin-right: -2rem;
     }
   }
 
@@ -381,6 +447,7 @@
   }
 
   &__friends {
+    display: flex;
   }
 }
 
@@ -393,6 +460,11 @@
   padding: 3rem;
   margin-bottom: 3.5rem;
   overflow: hidden;
+
+  @media (max-width: base.$bp-medium) {
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
 
   &__text {
     // background-color: orangered;
@@ -457,11 +529,19 @@
   padding: 3.5rem 0;
   text-align: center;
 
+  @media (max-width: base.$bp-medium) {
+    padding: 2.5rem 0;
+  }
+
   &__book-now {
     font-size: 2rem;
     font-weight: 300;
     margin-bottom: 2.5rem;
     text-transform: uppercase;
+
+    @media (max-width: base.$bp-smallest) {
+      font-size: 1.8rem;
+    }
   }
 }
 
@@ -493,6 +573,10 @@
   &__visible {
     @extend %btn-base;
     padding: 2rem 7.5rem;
+
+    @media (max-width: base.$bp-smallest) {
+      padding: 2rem 7rem;
+    }
   }
 
   &__invisible {
