@@ -1,0 +1,16 @@
+{
+  "name": "Nexter",
+  "version": "1.0.0",
+  "description": "Nexter webpage",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "author": "Jonas",
+  "license": "ISC",
+  "dependencies": {
+    "vite": "^7.2.7"
+  }
+}
