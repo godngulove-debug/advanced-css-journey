@@ -1,0 +1,13 @@
+@use './base';
+
+.story {
+  &__pictures {
+    background-color: #e2a5a5;
+    grid-column: full-start / span 5;
+  }
+
+  &__content {
+    background-color: base.$color-grey-light-1;
+    grid-column: col-start 5 / full-end;
+  }
+}
