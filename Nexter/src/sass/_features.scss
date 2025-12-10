@@ -3,4 +3,8 @@
 .features {
   background-color: base.$color-grey-light-2;
   grid-column: center-start / center-end;
+
+  .feature {
+    display: grid;
+  }
 }
