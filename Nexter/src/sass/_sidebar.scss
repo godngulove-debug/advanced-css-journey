@@ -7,6 +7,12 @@
 
   display: flex;
   justify-content: center;
+
+  @media (max-width: base.$bp-large) {
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;
+    justify-content: flex-end;
+  }
 }
 
 // For pointer cursor on nav button
@@ -24,6 +30,20 @@
   position: relative;
   margin-top: 3rem;
   // padding: 2rem;
+  @media (max-width: base.$bp-large) {
+    // margin-top: rem;
+    margin-right: 2rem;
+
+    &::before {
+      transform: translateY(-1.2rem);
+      // top: -1.5rem;
+    }
+
+    &::after {
+      // top: 1.5rem;
+      transform: translateY(1rem);
+    }
+  }
 
   &::before,
   &::after {
